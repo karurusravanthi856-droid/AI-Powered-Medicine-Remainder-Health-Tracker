@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Medicine Reminder & Health Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>💊 AI Medicine Reminder & Health Tracker</h1>
+
+        <div class="login-box">
+            <h2>Login</h2>
+
+            <input type="text" id="username" placeholder="Username">
+
+            <input type="password" id="password" placeholder="Password">
+
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div id="dashboard" style="display:none;">
+
+            <h2>Welcome 👋</h2>
+
+            <input type="text" id="medicine" placeholder="Medicine Name">
+
+            <input type="text" id="dosage" placeholder="Dosage">
+
+            <input type="time" id="time">
+
+            <button onclick="addMedicine()">Add Medicine</button>
+
+            <h3>Medicine List</h3>
+
+            <ul id="medicineList"></ul>
+
+        </div>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
