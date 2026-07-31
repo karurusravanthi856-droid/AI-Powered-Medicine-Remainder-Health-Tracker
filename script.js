@@ -14,7 +14,7 @@ function addMedicine() {
     let medicine = document.getElementById("medicine").value;
     let dosage = document.getElementById("dosage").value;
     let time = document.getElementById("time").value;
-    let days=document.getElementById("days").values;
+    let days = document.getElementById("days").values;
 
     if (medicine === "" || dosage === "" || time === ""|| days=== "") {
         alert("Please fill all fields");
@@ -35,7 +35,7 @@ function addMedicine() {
     document.getElementById("medicine").value = "";
     document.getElementById("dosage").value = "";
     document.getElementById("time").value = "";
-    document.getElementById("days".value = "";
+    document.getElementById("days").value = "";
 }
 
 function markTaken(button) {
