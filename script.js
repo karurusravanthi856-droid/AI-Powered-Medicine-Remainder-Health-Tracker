@@ -39,8 +39,20 @@ function addMedicine() {
 }
 
 function markTaken(button) {
+
     button.innerHTML = "✅ Taken";
     button.disabled = true;
+
+    let medicineItem = button.parentElement;
+
+    let historyItem = document.createElement("li");
+
+    let today = new Date().toLocaleString();
+
+    historyItem.innerHTML = "✅ " + medicineItem.innerHTML + "<br><small>" + today + "</small>";
+
+    document.getElementById("historyList").appendChild(historyItem);
+
     alert("Medicine marked as Taken!");
 }
 function callEmergency() {
