@@ -43,3 +43,21 @@ function markTaken(button) {
     button.disabled = true;
     alert("Medicine marked as Taken!");
 }
+function callEmergency() {
+
+    let name = document.getElementById("emergencyName").value;
+    let number = document.getElementById("emergencyNumber").value;
+
+    if (name === "" || number === "") {
+        alert("Please enter emergency contact details.");
+        return;
+    }
+
+    let confirmCall = confirm(
+        "🚨 Emergency!\n\nCall " + name + "?\n📞 " + number
+    );
+
+    if (confirmCall) {
+        window.location.href = "tel:" + number;
+    }
+}
