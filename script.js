@@ -14,7 +14,7 @@ function addMedicine() {
     let medicine = document.getElementById("medicine").value;
     let dosage = document.getElementById("dosage").value;
     let time = document.getElementById("time").value;
-    let days = document.getElementById("days").values;
+    let days = document.getElementById("days").value;
 
     if (medicine === "" || dosage === "" || time === ""|| days=== "") {
         alert("Please fill all fields");
@@ -31,6 +31,7 @@ function addMedicine() {
     `;
 
     document.getElementById("medicineList").appendChild(li);
+    checkRisk();
 
     document.getElementById("medicine").value = "";
     document.getElementById("dosage").value = "";
@@ -52,10 +53,28 @@ function markTaken(button) {
     historyItem.innerHTML = "✅ " + medicineItem.innerHTML + "<br><small>" + today + "</small>";
 
     document.getElementById("historyList").appendChild(historyItem);
-
+checkRisk();
     alert("Medicine marked as Taken!");
 }
 function callEmergency() {
+    function checkRisk() {
+
+    let total = document.getElementById("medicineList").children.length;
+    let taken = document.querySelectorAll("#medicineList button:disabled").length;
+
+    let risk = document.getElementById("riskAlert");
+
+    if (total === 0) {
+        risk.innerHTML = "✅ No Risk Detected";
+    }
+    else if (taken < total) {
+        risk.innerHTML = "⚠️ AI Alert: Medicine is still pending!";
+    }
+    else {
+        risk.innerHTML = "✅ All medicines taken on time.";
+    }
+
+}
 
     let name = document.getElementById("emergencyName").value;
     let number = document.getElementById("emergencyNumber").value;
